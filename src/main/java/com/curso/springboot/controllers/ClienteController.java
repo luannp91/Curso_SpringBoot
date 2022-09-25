@@ -1,6 +1,6 @@
 package com.curso.springboot.controllers;
 
-import com.curso.springboot.models.Cliente;
+import com.curso.springboot.model.entities.Cliente;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
