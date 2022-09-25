@@ -16,15 +16,15 @@ public class MetodosHttpController {
         return "Requisição POST";
     }
 
-    PutMapping
-    public String put() {
-        return "Requisição PUT";
-    }
-
-    PatchMapping
-    public String patch() {
-        return "Requisição PATCH";
-    }
+//    PutMapping()
+//    public String put() {
+//        return "Requisição PUT";
+//    }
+//
+//    PatchMapping
+//    public String patch() {
+//        return "Requisição PATCH";
+//    }
 
     @DeleteMapping
     public String delete() {
