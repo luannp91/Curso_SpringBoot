@@ -3,6 +3,8 @@ package com.curso.springboot.controllers;
 import com.curso.springboot.model.entities.Produto;
 import com.curso.springboot.model.repositories.ProdutoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -24,6 +26,12 @@ public class ProdutoController {
     @GetMapping
     public Iterable<Produto> obterProdutos() {
         return produtoRepository.findAll();
+    }
+
+    @GetMapping(path = "/pagina/{numeropagina}")
+    public Iterable<Produto> obterProdutosPorPagina(@PathVariable int numeroPagina) {
+        Pageable page = PageRequest.of(numeroPagina, 3);
+        return produtoRepository.findAll(page);
     }
 
     @GetMapping(path = "/{id}")
